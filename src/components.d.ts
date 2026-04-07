@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     /**
-     * ff-button -- framework-agnostic button primitive.
+     * ff-button — framework-agnostic button primitive.
      * ## Architectural role
      * Owns semantic behavior and a stable DOM contract. Visual identity is supplied from
      * outside via CSS custom properties (token contract + brand pack). This file never
@@ -15,7 +15,7 @@ export namespace Components {
      * ## SSR / SSG readiness contract
      * This component is written to be safe inside any server rendering context
      * (Next.js RSC, Angular Universal, Nuxt, Vite prerender, Stencil hydrate).
-     *  1. The render() method is a pure function of props -- no DOM access, no browser globals.
+     *  1. The render() method is a pure function of props — no DOM access, no browser globals.
      *  2. connectedCallback has NO side effects. Any API that requires a real DOM
      *     (focus, click dispatch, observers) is only touched inside componentDidLoad,
      *     which Stencil deliberately does not invoke in the hydrate module.
@@ -29,9 +29,9 @@ export namespace Components {
      *     element's `data-brand` / `data-theme` attributes, which the CSS cascade picks up.
      * ## Where the visual identity comes from (NOT here)
      *  - ff-button.css reads --ff-button-* CSS custom properties (bg, fg, radius, padding).
-     *  - Those variables are defined in packages/tokens/src/contract.css (stable API).
-     *  - Concrete brand values come from packages/brand-styles/src/*.css.
-     *  - The consumer app shell sets data-brand + data-theme on any ancestor -> the token
+     *  - Those variables are defined in @fuggetlenfe/tokens/contract.css (stable API).
+     *  - Concrete brand values come from @fuggetlenfe/brand-styles/*.css.
+     *  - The consumer app shell sets data-brand + data-theme on any ancestor → the token
      *    cascade applies the correct overrides via attribute selectors in the brand pack.
      */
     interface FfButton {
@@ -78,7 +78,7 @@ declare global {
         "ffClick": MouseEvent;
     }
     /**
-     * ff-button -- framework-agnostic button primitive.
+     * ff-button — framework-agnostic button primitive.
      * ## Architectural role
      * Owns semantic behavior and a stable DOM contract. Visual identity is supplied from
      * outside via CSS custom properties (token contract + brand pack). This file never
@@ -86,7 +86,7 @@ declare global {
      * ## SSR / SSG readiness contract
      * This component is written to be safe inside any server rendering context
      * (Next.js RSC, Angular Universal, Nuxt, Vite prerender, Stencil hydrate).
-     *  1. The render() method is a pure function of props -- no DOM access, no browser globals.
+     *  1. The render() method is a pure function of props — no DOM access, no browser globals.
      *  2. connectedCallback has NO side effects. Any API that requires a real DOM
      *     (focus, click dispatch, observers) is only touched inside componentDidLoad,
      *     which Stencil deliberately does not invoke in the hydrate module.
@@ -100,9 +100,9 @@ declare global {
      *     element's `data-brand` / `data-theme` attributes, which the CSS cascade picks up.
      * ## Where the visual identity comes from (NOT here)
      *  - ff-button.css reads --ff-button-* CSS custom properties (bg, fg, radius, padding).
-     *  - Those variables are defined in packages/tokens/src/contract.css (stable API).
-     *  - Concrete brand values come from packages/brand-styles/src/*.css.
-     *  - The consumer app shell sets data-brand + data-theme on any ancestor -> the token
+     *  - Those variables are defined in @fuggetlenfe/tokens/contract.css (stable API).
+     *  - Concrete brand values come from @fuggetlenfe/brand-styles/*.css.
+     *  - The consumer app shell sets data-brand + data-theme on any ancestor → the token
      *    cascade applies the correct overrides via attribute selectors in the brand pack.
      */
     interface HTMLFfButtonElement extends Components.FfButton, HTMLStencilElement {
@@ -125,7 +125,7 @@ declare global {
 }
 declare namespace LocalJSX {
     /**
-     * ff-button -- framework-agnostic button primitive.
+     * ff-button — framework-agnostic button primitive.
      * ## Architectural role
      * Owns semantic behavior and a stable DOM contract. Visual identity is supplied from
      * outside via CSS custom properties (token contract + brand pack). This file never
@@ -133,7 +133,7 @@ declare namespace LocalJSX {
      * ## SSR / SSG readiness contract
      * This component is written to be safe inside any server rendering context
      * (Next.js RSC, Angular Universal, Nuxt, Vite prerender, Stencil hydrate).
-     *  1. The render() method is a pure function of props -- no DOM access, no browser globals.
+     *  1. The render() method is a pure function of props — no DOM access, no browser globals.
      *  2. connectedCallback has NO side effects. Any API that requires a real DOM
      *     (focus, click dispatch, observers) is only touched inside componentDidLoad,
      *     which Stencil deliberately does not invoke in the hydrate module.
@@ -147,9 +147,9 @@ declare namespace LocalJSX {
      *     element's `data-brand` / `data-theme` attributes, which the CSS cascade picks up.
      * ## Where the visual identity comes from (NOT here)
      *  - ff-button.css reads --ff-button-* CSS custom properties (bg, fg, radius, padding).
-     *  - Those variables are defined in packages/tokens/src/contract.css (stable API).
-     *  - Concrete brand values come from packages/brand-styles/src/*.css.
-     *  - The consumer app shell sets data-brand + data-theme on any ancestor -> the token
+     *  - Those variables are defined in @fuggetlenfe/tokens/contract.css (stable API).
+     *  - Concrete brand values come from @fuggetlenfe/brand-styles/*.css.
+     *  - The consumer app shell sets data-brand + data-theme on any ancestor → the token
      *    cascade applies the correct overrides via attribute selectors in the brand pack.
      */
     interface FfButton {
@@ -205,7 +205,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             /**
-             * ff-button -- framework-agnostic button primitive.
+             * ff-button — framework-agnostic button primitive.
              * ## Architectural role
              * Owns semantic behavior and a stable DOM contract. Visual identity is supplied from
              * outside via CSS custom properties (token contract + brand pack). This file never
@@ -213,7 +213,7 @@ declare module "@stencil/core" {
              * ## SSR / SSG readiness contract
              * This component is written to be safe inside any server rendering context
              * (Next.js RSC, Angular Universal, Nuxt, Vite prerender, Stencil hydrate).
-             *  1. The render() method is a pure function of props -- no DOM access, no browser globals.
+             *  1. The render() method is a pure function of props — no DOM access, no browser globals.
              *  2. connectedCallback has NO side effects. Any API that requires a real DOM
              *     (focus, click dispatch, observers) is only touched inside componentDidLoad,
              *     which Stencil deliberately does not invoke in the hydrate module.
@@ -227,9 +227,9 @@ declare module "@stencil/core" {
              *     element's `data-brand` / `data-theme` attributes, which the CSS cascade picks up.
              * ## Where the visual identity comes from (NOT here)
              *  - ff-button.css reads --ff-button-* CSS custom properties (bg, fg, radius, padding).
-             *  - Those variables are defined in packages/tokens/src/contract.css (stable API).
-             *  - Concrete brand values come from packages/brand-styles/src/*.css.
-             *  - The consumer app shell sets data-brand + data-theme on any ancestor -> the token
+             *  - Those variables are defined in @fuggetlenfe/tokens/contract.css (stable API).
+             *  - Concrete brand values come from @fuggetlenfe/brand-styles/*.css.
+             *  - The consumer app shell sets data-brand + data-theme on any ancestor → the token
              *    cascade applies the correct overrides via attribute selectors in the brand pack.
              */
             "ff-button": LocalJSX.IntrinsicElements["ff-button"] & JSXBase.HTMLAttributes<HTMLFfButtonElement>;

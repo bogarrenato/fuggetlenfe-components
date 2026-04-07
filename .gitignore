@@ -1,7 +1,8 @@
 node_modules/
 dist/
-loader/
 components/
 hydrate/
-.DS_Store
+loader/
+.stencil/
 storybook-static/
+site/

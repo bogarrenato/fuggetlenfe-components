@@ -1,9 +1,11 @@
 {
   "name": "@fuggetlenfe/components",
-  "version": "0.1.0",
-  "description": "Stencil web components – framework-agnostic, Figma-backed primitives",
+  "version": "0.2.0",
+  "description": "Framework-independent Stencil web components for the Fuggetlenfe platform.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
@@ -35,20 +37,35 @@
     "dist/",
     "loader/",
     "components/",
-    "hydrate/"
+    "hydrate/",
+    "README.md"
   ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bogarrenato/fuggetlenfe-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bogarrenato/fuggetlenfe-components/issues"
+  },
+  "homepage": "https://bogarrenato.github.io/fuggetlenfe-components/latest/",
   "scripts": {
     "build": "stencil build && node scripts/patch-custom-elements-types.mjs",
+    "build-storybook": "storybook build -c .storybook -o storybook-static",
+    "build:docs-site": "node scripts/build-docs-site.mjs",
     "dev": "stencil build --dev --watch",
-    "test": "stencil test --spec",
+    "pack:check": "npm pack --dry-run",
     "storybook": "storybook dev -p 6006 -c .storybook --ci",
-    "build-storybook": "storybook build -c .storybook -o storybook-static"
+    "test": "stencil test --spec --passWithNoTests"
   },
   "dependencies": {
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@fuggetlenfe/tokens": "^0.1.0",
+    "@fuggetlenfe/tokens": "^0.2.0",
     "@storybook/addon-a11y": "^10.3.3",
     "@storybook/addon-docs": "^10.3.3",
     "@storybook/web-components-vite": "^10.3.3",

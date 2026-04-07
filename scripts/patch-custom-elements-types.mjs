@@ -7,12 +7,12 @@
  *   import type { Components } from '@fuggetlenfe/components/components';
  * and expects the re-export to live inside the custom-elements directory.
  * Stencil itself does not emit the `Components` / `JSX` namespace re-export
- * into that directory -- it only writes them to dist/types/components.d.ts
+ * into that directory — it only writes them to dist/types/components.d.ts
  * (the main package types entry).
  *
  * To keep the generated wrappers compiling without hand-editing them, we
  * append a thin re-export block to the auto-generated ./components/index.d.ts
- * after every Stencil build. The re-export is pure types -- it adds no runtime
+ * after every Stencil build. The re-export is pure types — it adds no runtime
  * bytes.
  *
  * This script is idempotent. It can be run multiple times in a row without

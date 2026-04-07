@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          npm install || {
+            npm install "git+https://github.com/bogarrenato/fuggetlenfe-tokens.git"
+            npm install
+          }
+
+      - name: Build package
+        run: npm run build
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Build docs site
+        run: npm run build:docs-site
+
+      - name: Validate publish artifact
+        run: npm run pack:check
