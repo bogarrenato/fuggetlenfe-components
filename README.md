@@ -27,6 +27,12 @@ Those live in separate repositories and consume the published npm packages.
 - Shared control tokens such as radius and padding come from `@fuggetlenfe/tokens`; concrete brand values come from `@fuggetlenfe/brand-styles`.
 - React and Angular wrappers must stay thin and consume this package as an external dependency, not through cross-repo source coupling.
 
+## Primitive governance
+
+The shipped surface is governed by the **Source Alignment Gate**. A Stencil component may be added to this package only if it has a matching entry in the authoritative Figma Source Manifest at `fuggetlenfe-tokens/src/figma-source-manifest.json` with `status: "stable"` and `shipping` including `"core"`.
+
+Today the package ships a single stable primitive, `ff-button`. `ff-input` is registered as `status: "roadmap"` in the manifest and is blocked on two recorded design decisions. Previously inventoried components (`ff-dropdown`, `ff-modal`, `ff-data-table`) were removed in 2026-04 because they had no Figma source and are tracked under the manifest's `nonShippedInventory` audit trail. They are not re-introduced without a new Figma source.
+
 ## Local commands
 
 ```bash
