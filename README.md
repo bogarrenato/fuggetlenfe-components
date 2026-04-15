@@ -11,6 +11,7 @@ This repository owns only the web component core:
 - SSR hydrate module
 - Storybook
 - versioned component documentation site
+- structural CSS that consumes the external semantic-first token contract
 
 It does not own:
 
@@ -19,6 +20,12 @@ It does not own:
 - tokens or official brand packs
 
 Those live in separate repositories and consume the published npm packages.
+
+## Engineering guardrails
+
+- The component layer is unstyled in the product-brand sense: it reads only the published `--ff-*` contract.
+- Shared control tokens such as radius and padding come from `@fuggetlenfe/tokens`; concrete brand values come from `@fuggetlenfe/brand-styles`.
+- React and Angular wrappers must stay thin and consume this package as an external dependency, not through cross-repo source coupling.
 
 ## Local commands
 
