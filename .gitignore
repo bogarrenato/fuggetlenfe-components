@@ -1,8 +1,14 @@
 node_modules/
-dist/
-components/
-hydrate/
-loader/
-.stencil/
-storybook-static/
-site/
+# Anchor Stencil build output paths to the repo root so they don't
+# accidentally match `src/components/` (tracked source tree).
+/dist/
+/components/
+/hydrate/
+/loader/
+/.stencil/
+/storybook-static/
+/site/
+# Stencil docs-readme output target writes per-component readme.md next
+# to the component source. These are fully regenerable from the .tsx
+# definition, so we don't track them.
+src/components/**/readme.md
