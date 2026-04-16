@@ -47,6 +47,8 @@
 .ff-button {
   display: inline-flex;
   align-items: center;
+  /* Spacing between icon slots and label content. */
+  gap: var(--ff-button-gap, 0.5em);
   justify-content: center;
   width: 100%;
   min-height: 22px;
@@ -103,4 +105,16 @@
   --_button-fg: var(--ff-button-fg-disabled, inherit);
   cursor: not-allowed;
   opacity: 1;
+}
+
+/* Icon slot layout: ensure slotted SVGs and images inherit the button foreground color
+   and size to a sensible default without requiring the consumer to add their own styles. */
+::slotted([slot="icon-start"]),
+::slotted([slot="icon-end"]) {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  pointer-events: none;
 }
